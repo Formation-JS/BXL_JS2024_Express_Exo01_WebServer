@@ -39,7 +39,7 @@ app.get('/dest', (req, res) => {
 
 app.get('/dest/:id([0-9]+)', (req, res) => {
     const id = parseInt(req.params.id);
-    const destination = data.destinations.find(d => d.id == id);
+    const destination = data.destinations.find(d => d.id === id);
 
     if(!destination) {
         res.status(404).render('errors/404');
