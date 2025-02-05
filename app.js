@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import express from 'express';
 import morgan from 'morgan';
+import data from './data/japon.json' with { type: 'json' }
 
 //! Configuration du web serveur
 const app = express();
@@ -32,11 +33,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/dest', (req, res) => {
-    res.status(200).render('dest/index');
+    const destinations = data.destinations;
+    res.status(200).render('dest/index', { destinations });
 });
 
 app.get('/dest/:id([0-9]+)', (req, res) => {
-    res.status(200).render('dest/detail');
+    const id = parseInt(req.params.id);
+    const destination = data.destinations.find(d => d.id == id);
+
+    if(!destination) {
+        res.status(404).render('errors/404');
+    }
+
+    res.status(200).render('dest/detail', destination);
 });
 
 //! Demarrage du web serveur
