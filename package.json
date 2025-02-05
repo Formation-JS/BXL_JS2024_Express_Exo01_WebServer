@@ -15,5 +15,14 @@
     "chalk": "^5.4.1",
     "express": "^4.21.2",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Formation-JS/BXL_JS2024_Express_Exo01_WebServer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Formation-JS/BXL_JS2024_Express_Exo01_WebServer/issues"
+  },
+  "homepage": "https://github.com/Formation-JS/BXL_JS2024_Express_Exo01_WebServer#readme"
 }
