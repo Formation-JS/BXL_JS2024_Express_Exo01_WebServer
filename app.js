@@ -25,7 +25,15 @@ app.use((req, res, next) => {
 
 //! Routing
 app.get('/', (req, res) => {
-    res.status(200).render('home/index', { example: 'La valeur est 42' });
+    res.status(200).render('home/index');
+});
+
+app.get('/dest', (req, res) => {
+    res.status(200).render('dest/index');
+});
+
+app.get('/dest/:id([0-9]+)', (req, res) => {
+    res.status(200).render('dest/detail');
 });
 
 //! Demarrage du web serveur
