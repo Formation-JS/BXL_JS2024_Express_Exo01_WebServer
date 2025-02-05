@@ -5,12 +5,27 @@ import morgan from 'morgan';
 //! Configuration du web serveur
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 //! App Middleware
+//  - Logger
 app.use(morgan('tiny'));
+
+//  - Custom middleware for render (inject layout)
+app.use((req, res, next) => {
+    res.originalRender = res.render;
+
+    res.render = (view, data) => {
+        res.originalRender('_layout', { view, data });
+    };
+
+    next();
+});
 
 //! Routing
 app.get('/', (req, res) => {
-    res.status(200).send('<html><body><h1>Hello World</h1></body></html>')
+    res.status(200).render('home/index', { example: 'La valeur est 42' });
 });
 
 //! Demarrage du web serveur

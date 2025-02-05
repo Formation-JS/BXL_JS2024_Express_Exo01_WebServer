@@ -13,10 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "morgan": "^1.10.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Formation-JS/BXL_JS2024_Express_Exo01_WebServer.git"
