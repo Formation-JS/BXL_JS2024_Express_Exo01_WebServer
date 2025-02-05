@@ -12,6 +12,9 @@ app.set('views', './views');
 //  - Logger
 app.use(morgan('tiny'));
 
+//  - Fichier public
+app.use(express.static('public'));
+
 //  - Custom middleware for render (inject layout)
 app.use((req, res, next) => {
     res.originalRender = res.render;
