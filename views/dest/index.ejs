@@ -3,7 +3,7 @@
     <% for(const destination of destinations) { %>
         <div>
             <h2><%= destination.name %> (<%= destination.location %>)</h2>
-            <img src="<%= destination.image %>" alt="Image de <%= destination.name %>" >
+            <img src="<%= destination.thumbnail %>" alt="Image de <%= destination.name %>" >
             <p><%= destination.shortDescription %></p>
             <a href="/dest/<%= destination.id %>">Plus d'information sur ce lieu</a>
         </div>
