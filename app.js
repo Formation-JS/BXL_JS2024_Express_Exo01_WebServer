@@ -48,6 +48,11 @@ app.get('/dest/:id([0-9]+)', (req, res) => {
     res.status(200).render('dest/detail', destination);
 });
 
+//! Page 404 si aucune route n'a été trouvé !
+app.use((req, res) => {
+    res.status(404).render('errors/404');
+});
+
 //! Demarrage du web serveur
 app.listen(8080, function () {
     console.log(chalk.cyanBright(`Web server is running on port ${8080}`));
